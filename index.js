@@ -174,7 +174,8 @@ Baby.prototype.play = function()
     4. Explicit Binding: .call, .apply, .bind
       .call Immediately invokes the function. Pass arguments 1 by 1.
       .apply Immediately invokes the function. Pass arguments as/in an array.
-      .bind Does not immediately invoke the function. Pass arguments 1 by 1.
+      .bind Does not immediately invoke the function. Pass arguments 1 by 1. 
+      .bind returns a new function to be invoked later.
   */
   
   
