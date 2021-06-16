@@ -149,7 +149,6 @@ function Baby(name, age, favoriteToy)
   this.favoriteToy = favoriteToy;
 }
 
-
 //Baby inherits from Person
 Baby.prototype = Object.create(Person.prototype);
 
@@ -163,10 +162,19 @@ Baby.prototype.play = function()
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    1. Window / Global Object binding: "this" holds the value of the entire
+      window/console object.
+
+    2. Implicit Binding: used in dot notation. The object before (to the left of)
+      the dot is bound to "this." 
+
+    3. New Binding: used Constructor() function. 
+      refers to the object created and returned by the constructor() function.
+
+    4. Explicit Binding: .call, .apply, .bind
+      .call Immediately invokes the function. Pass arguments 1 by 1.
+      .apply Immediately invokes the function. Pass arguments as/in an array.
+      .bind Does not immediately invoke the function. Pass arguments 1 by 1.
   */
   
   
