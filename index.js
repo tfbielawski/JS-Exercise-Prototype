@@ -39,34 +39,97 @@ function Airplane(name) {
           + It should return a string with `name` and `age`. Example: "Mary, 50"
   */
   
- function Person() {
-    
-  }
+ //Define the object, pass in name and age
+ function Person(name, age) 
+ {
+    //Set name to this.name
+    this.name = name;
+    //Set age to this.age
+    this.age = age;
+    //Initialize stomach to empty array
+    this.stomach = [];
+ }
  
- 
+ //Create an eat() function that can be used by person. Pass in edible 
+ Person.prototype.eat = function (edible)
+ {
+   //If stomage has 10 or fewer...
+   if(this.stomach.length <= 10)
+   {
+     //...the person can eat
+     this.stomach.push(edible);
+   }
+ }
 
+ //Poop method
+ Person.prototype.poop = function(edible)
+ {
+   //Reset stomach to empty
+   this.stomach = [];
+ }
   
-  
-  
-  
-  /*
-    TASK 2
-      - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
-      - All instances built with Car:
-          + should initialize with an `tank` at 0
-          + should initialize with an `odometer` at 0
+ //toString method
+ Person.prototype.toString = function()
+ {
+   //Return the name and age in a string
+   return `${this.name}, ${this.age}`;
+ }
+
+
+/*
+  TASK 2
+  - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
+  - All instances built with Car:
+      + should initialize with an `tank` at 0
+      + should initialize with an `odometer` at 0
       - Give cars the ability to get fueled with a `.fill(gallons)` method. Add the gallons to `tank`.
       - STRETCH: Give cars ability to `.drive(distance)`. The distance driven:
           + Should cause the `odometer` to go up.
           + Should cause the the `tank` to go down taking `milesPerGallon` into account.
       - STRETCH: A car which runs out of `fuel` while driving can't drive any more distance:
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
-  */
+*/
   
- function Car() {
-    
+//Define the object
+function Car(model, milesPerGallon) 
+{
+  //Set model to this.model
+  this.model = model;
+  //Set mpg to this.mpg
+  this.milesPerGallon = milesPerGallon;
+  //Init tank to 0
+  this.tank = 0;
+  //Init odometer to 0
+  this.odometer = 0;
+}
+
+/* Stretch Goal*/
+//Define a prototype function
+Car.prototype.fill = function(gallons)
+{
+  //Add gallons to what's already in the tank.
+  this.tank += gallons;
+
+  /* Stretch Goal */
+  //If the tank is empty...
+  if (this.tank == 0)
+  {
+    //...Print this
+    console.log("I ran out of fuel", "at",  "miles!")
   }
-  
+}
+
+//Define a prototype drive() function
+Car.prototype.drive = function(distance)
+{
+    //Add miles to what's already on the odometer
+    this.odometer += distance;
+    //Declare gallonsUsed, assign result of distance / mpg
+    let gallonsUsed = distance / this.milesPerGallon;
+    //Subtract gallons used from the tank
+    this.tank -= gallonsUsed;
+
+}
   
   /*
     TASK 3
