@@ -1,3 +1,10 @@
+/*  Tom Bielawski 
+*   Lambda School WEB45
+*   Unit 1, Module 3, Day 3
+*   JS Prototypes
+*   index.js
+*   6/16/2021 */
+
 /*
   EXAMPLE TASK:
     - Write an Airplane constructor that initializes `name` from an argument.
