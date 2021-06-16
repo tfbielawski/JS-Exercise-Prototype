@@ -122,7 +122,7 @@ Car.prototype.fill = function(gallons)
   if (this.tank == 0)
   {
     //...Print this
-    console.log("I ran out of fuel", "at",  "miles!")
+    console.log("I ran out of fuel at", this.odometer,"miles!")
   }
 }
 
