@@ -60,7 +60,7 @@ function Airplane(name) {
  //Create an eat() function that can be used by person. Pass in edible 
  Person.prototype.eat = function (edible)
  {
-   //If stomage has 10 or fewer...
+   //If stomach has 10 or fewer...
    if(this.stomach.length <= 10)
    {
      //...the person can eat
